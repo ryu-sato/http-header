@@ -9,5 +9,4 @@ ARG HTTPD_EXTRA_CONF_DIR="/usr/local/apache2/conf/extra"
 # Add extra config 
 ARG CONF_PROXY="extra/proxy.conf"
 COPY $CONF_PROXY $HTTPD_EXTRA_CONF_DIR/
-
 RUN echo "Include conf/$CONF_PROXY" >> $HTTPD_CONF_PATH
