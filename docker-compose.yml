@@ -1,0 +1,24 @@
+version: '2'
+services:
+  http_header:
+    image: 'ryu310/http-header:2.4-01'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - 'http_header_config:/usr/local/apache2/conf'
+    ports:
+      - 80:80
+    links:
+      - wiki:wiki
+    # Enable to restart container (It is useful for Docker for Windows)
+    #restart: always
+  wiki:
+    image: 'ryu310/pukiwiki-plus:7-apache-1.4.7-02'
+    volumes:
+      - 'wiki_data:/var/www/html'
+    # Enable to restart container (It is useful for Docker for Windows)
+    #restart: always
+volumes:
+  http_header_config:
+  wiki_data:
