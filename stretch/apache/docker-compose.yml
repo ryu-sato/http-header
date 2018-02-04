@@ -1,0 +1,30 @@
+version: '2'
+services:
+  http_header:
+    image: 'ryu310/http-header-docker-compose:php-7-apache-01'
+    build:
+      context: ../../
+      dockerfile: stretch/apache/Dockerfile
+    links:
+      - wiki:wiki
+    depends_on:
+      - wiki
+    volumes:
+      - 'http_header_config:/etc/apache2/conf'
+      #- 'D:/usr/archive/2018-02-03-pukiwiki_plus-and-docker-for-windows-2/docker/apache/htdocs:/var/www/html'
+    ports:
+      - 80:80
+    # Enable to restart container (It is useful for Docker for Windows)
+    #restart: always
+  wiki:
+    image: 'ryu310/pukiwiki-plus:7-apache-1.4.7-04'
+    volumes:
+      #- 'D:/usr/archive/2018-02-03-pukiwiki_plus-and-docker-for-windows-2/docker/apache/wiki:/var/www/html/wiki'
+      - 'wiki_data:/var/www/html/wiki'
+    environment:
+      - SUBDIR=/wiki
+    # Enable to restart container (It is useful for Docker for Windows)
+    #restart: always
+volumes:
+  http_header_config:
+  wiki_data:
