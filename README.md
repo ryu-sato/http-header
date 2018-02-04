@@ -13,7 +13,7 @@
 
 ### インストールと起動
 ```sh
-$ git clone https://github.com/ryu-sato/http-header.git && cd http-header
+$ git clone https://github.com/ryu-sato/http-header-docker-compose.git && cd http-header-docker-compose
 $ docker-compose up -d
 ```
 
@@ -25,7 +25,7 @@ $ docker-compose up -d
 `htdocs/` 配下のファイルを編集して再ビルドする。
 
 ```sh
-$ git clone https://github.com/ryu-sato/http-header.git && cd http-header
+$ git clone https://github.com/ryu-sato/http-header-docker-compose.git && cd http-header-docker-compose
 $ vim htdocs/index.html
 $ docker-compose up -d --build
 ```
@@ -49,7 +49,7 @@ ProxyPassReverse /wp http://wp/wp/
 version: '2'
 services:
   http_header:
-    image: 'ryu310/http-header:2.4-01'
+    image: 'ryu310/http-header-docker-compose:2.4-01'
     build:
       context: .
       dockerfile: Dockerfile
