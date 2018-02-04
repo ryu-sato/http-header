@@ -1,4 +1,4 @@
-# http-header 概要
+# http-header-docker-compose 概要
 
 サブディレクトリ毎に HTTP サーバへリバースプロクシする環境における HTTP ヘッダとなるコンテナ。
 
