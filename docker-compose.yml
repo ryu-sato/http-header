@@ -1,7 +1,7 @@
 version: '2'
 services:
   http_header:
-    image: 'ryu310/http-header:2.4-01'
+    image: 'ryu310/http-header-docker-compose:2.4-01'
     build:
       context: .
       dockerfile: Dockerfile
