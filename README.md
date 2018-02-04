@@ -1,42 +1,50 @@
-# http-header ŠT—v
+# http-header æ¦‚è¦
 
-ƒTƒuƒfƒBƒŒƒNƒgƒŠ–ˆ‚É HTTP ƒT[ƒo‚ÖƒŠƒo[ƒXƒvƒƒNƒV‚·‚éŠÂ‹«‚É‚¨‚¯‚é HTTP ƒwƒbƒ_‚Æ‚È‚éƒRƒ“ƒeƒiB
+ã‚µãƒ–ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªæ¯ã« HTTP ã‚µãƒ¼ãƒã¸ãƒªãƒãƒ¼ã‚¹ãƒ—ãƒ­ã‚¯ã‚·ã™ã‚‹ç’°å¢ƒã«ãŠã‘ã‚‹ HTTP ãƒ˜ãƒƒãƒ€ã¨ãªã‚‹ã‚³ãƒ³ãƒ†ãƒŠã€‚
 
-# g‚¢•û
+# ä½¿ã„æ–¹
 
-## ƒfƒtƒHƒ‹ƒgŠÂ‹«
+## ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆç’°å¢ƒ
 
-### ŠÂ‹«à–¾
+### ç’°å¢ƒèª¬æ˜
 
-- /wiki ”z‰º‚Ö‚ÌƒAƒNƒZƒX‚Í `ryu310/pukiwiki-plus:7-apache-1.4.7-02` ‚Ö Reverse Proxy ‚·‚é
-- ‚»‚Ì‘¼ƒAƒNƒZƒX‚Í Index ƒy[ƒW‚ğ•\¦‚·‚é(ƒRƒ“ƒeƒ“ƒc‚Í‹ó)
+- /wiki é…ä¸‹ã¸ã®ã‚¢ã‚¯ã‚»ã‚¹ã¯ `ryu310/pukiwiki-plus` ã¸ Reverse Proxy ã•ã‚Œã‚‹
+- Index ãƒšãƒ¼ã‚¸ã¯ /wiki ã¸ã®ãƒªãƒ³ã‚¯ãŒè¡¨ç¤ºã•ã‚Œã‚‹
 
-### ƒCƒ“ƒXƒg[ƒ‹‚Æ‹N“®
+### ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¨èµ·å‹•
 ```sh
-$ git clone š
+$ git clone https://github.com/ryu-sato/http-header.git && cd http-header
 $ docker-compose up -d
 ```
 
-ƒCƒ“ƒXƒg[ƒ‹ŒãA`http://localhost/` ‚ÉƒAƒNƒZƒX‚·‚é‚Æ `Index of /` ‚ª•\¦‚³‚ê‚éB
-‚Ü‚½A`http://localhost/wiki/` ‚ÉƒAƒNƒZƒX‚·‚é‚Æ pukiwiki ‚ª•\¦‚³‚ê‚éB
+ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«å¾Œã€`http://localhost/` ã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ã¨ Index (é™çš„ãƒšãƒ¼ã‚¸) ãŒè¡¨ç¤ºã•ã‚Œã‚‹ã€‚
+ãƒªãƒ³ã‚¯ã‚’ã‚¯ãƒªãƒƒã‚¯ã™ã‚‹ã‹ã€ã¾ãŸã¯ `http://localhost/wiki/` ã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ã¨ pukiwiki ãŒè¡¨ç¤ºã•ã‚Œã‚‹ã€‚
 
-## ƒJƒXƒ^ƒ}ƒCƒYŠÂ‹«(Default ƒRƒ“ƒeƒ“ƒc‚ğ’Ç‰Á)
+## ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚ºç’°å¢ƒ(Default ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚’è¿½åŠ )
 
-## ƒJƒXƒ^ƒ}ƒCƒYŠÂ‹«(Reverse Proxy æ‚ğ’Ç‰Á)
+`htdocs/` é…ä¸‹ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç·¨é›†ã—ã¦å†ãƒ“ãƒ«ãƒ‰ã™ã‚‹ã€‚
 
-—á: /wp ‚ÉƒAƒNƒZƒX‚·‚é‚Æ Wordpress ‚ğ•\¦‚·‚éê‡B
+```sh
+$ git clone https://github.com/ryu-sato/http-header.git && cd http-header
+$ vim htdocs/index.html
+$ docker-compose up -d --build
+```
 
-1. extra ƒfƒBƒŒƒNƒgƒŠ‚É apache ‚ÌƒRƒ“ƒtƒBƒOƒtƒ@ƒCƒ‹‚ğ•ÛŠÇ‚·‚éB
-1. Dockerfile ‚ğ•ÒW‚µ‚ÄƒRƒ“ƒtƒBƒOƒtƒ@ƒCƒ‹‚ğƒRƒ“ƒeƒi‚ÉƒRƒs[‚·‚éB
+## ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚ºç’°å¢ƒ(Reverse Proxy å…ˆã‚’è¿½åŠ )
+
+ä¾‹: /wp ã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ã¨ Wordpress ã‚’è¡¨ç¤ºã™ã‚‹å ´åˆã€‚
+
+1. extra ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã« apache ã®ã‚³ãƒ³ãƒ•ã‚£ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¿ç®¡ã™ã‚‹ã€‚
+1. Dockerfile ã‚’ç·¨é›†ã—ã¦ã‚³ãƒ³ãƒ•ã‚£ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚³ãƒ³ãƒ†ãƒŠã«ã‚³ãƒ”ãƒ¼ã™ã‚‹ã€‚
 ```text
   : <snip>
-# ƒtƒ@ƒCƒ‹Å‰º•”‚É‰º‹L‚Ìs‚ğ’Ç‰Á‚·‚é
-ProxyPass /wp http://wp/
-ProxyPassReverse /wp http://wp/
+# ãƒ•ã‚¡ã‚¤ãƒ«æœ€ä¸‹éƒ¨ã«ä¸‹è¨˜ã®è¡Œã‚’è¿½åŠ ã™ã‚‹
+ProxyPass /wp http://wp/wp
+ProxyPassReverse /wp http://wp/wp/
 ```
-1. docker-compose.yml ‚ğ•ÒW‚µ‚Ä wp ‚©‚çIPƒAƒhƒŒƒX‚ğ–¼‘O‰ğŒˆ‚Å‚«‚é‚æ‚¤‚É‚·‚éB
-    - services ”z‰º‚É wp ‚Ìİ’è‚ğ’Ç‰Á‚·‚é
-    - links ‚É wp ‚ğ’Ç‰Á‚·‚é
+1. docker-compose.yml ã‚’ç·¨é›†ã—ã¦ wp ã‹ã‚‰IPã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’åå‰è§£æ±ºã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹ã€‚
+    - services é…ä¸‹ã« wp ã®è¨­å®šã‚’è¿½åŠ ã™ã‚‹
+    - links ã« wp ã‚’è¿½åŠ ã™ã‚‹
 ```
 version: '2'
 services:
