@@ -10,15 +10,30 @@
 
 - /wiki 配下へのアクセスは `ryu310/pukiwiki-plus` へ Reverse Proxy される
 - Index ページは /wiki へのリンクが表示される
+- php は利用不可
 
-### インストールと起動
+### 起動方法
+
 ```sh
-$ git clone https://github.com/ryu-sato/http-header-docker-compose.git && cd http-header-docker-compose
+$ curl -o docker-compose.yml https://raw.githubusercontent.com/ryu-sato/http-header-docker-compose/master/docker-compose.yml
 $ docker-compose up -d
 ```
 
 インストール後、`http://localhost/` にアクセスすると Index (静的ページ) が表示される。
 リンクをクリックするか、または `http://localhost/wiki/` にアクセスすると pukiwiki が表示される。
+
+## PHP 付環境
+
+- /wiki 配下へのアクセスは `ryu310/pukiwiki-plus` へ Reverse Proxy される
+- Index ページは /wiki へのリンクが表示される
+- php が利用不可
+
+### 起動方法
+
+```sh
+$ curl -o docker-compose.yml https://raw.githubusercontent.com/ryu-sato/http-header-docker-compose/master/stretch/apache/docker-compose.yml
+$ docker-compose up -d
+```
 
 ## カスタマイズ環境(Default コンテンツを追加)
 
