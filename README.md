@@ -65,3 +65,7 @@ services:
   wp:
     image: 'wordpress'
 ```
+
+# TODO
+
+- [ ] stretch/apache/Dockerfile を Docker Hub で Autobuild する
