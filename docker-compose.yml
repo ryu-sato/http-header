@@ -9,14 +9,14 @@ services:
       - 'http_header_config:/usr/local/apache2/conf'
     ports:
       - 80:80
-    links:
-      - wiki:wiki
     # Enable to restart container (It is useful for Docker for Windows)
     #restart: always
   wiki:
-    image: 'ryu310/pukiwiki-plus:7-apache-1.4.7-02'
+    image: 'ryu310/pukiwiki-plus:7-apache-1.4.7-04'
     volumes:
       - 'wiki_data:/var/www/html'
+    environment:
+      - SUBDIR=/wiki
     # Enable to restart container (It is useful for Docker for Windows)
     #restart: always
 volumes:
