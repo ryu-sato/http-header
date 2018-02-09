@@ -1,13 +1,13 @@
 version: '2'
 services:
   http_header:
-    image: 'ryu310/http-header-docker-compose:php-7-apache-03'
+    image: 'ryu310/http-header-docker-compose:php-7-apache-04'
     build:
       context: ../../
       dockerfile: stretch/apache/Dockerfile
     volumes:
       - 'http_header_config:/etc/apache2/conf'
-      - 'http_header_data:/usr/local/apache2/htdocs'
+      - 'http_header_data:/var/www/html'
     ports:
       - 80:80
     # Enable to restart container (It is useful for Docker for Windows)
