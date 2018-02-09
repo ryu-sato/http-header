@@ -7,7 +7,7 @@ services:
       dockerfile: stretch/apache/Dockerfile
     volumes:
       - 'http_header_config:/etc/apache2/conf'
-      - 'http_header_data:/etc/apache2/htdocs'
+      - 'http_header_data:/usr/local/apache2/htdocs'
     ports:
       - 80:80
     # Enable to restart container (It is useful for Docker for Windows)
