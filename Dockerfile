@@ -1,4 +1,4 @@
-FROM httpd:2.4
+FROM httpd:2.4.29
 
 MAINTAINER Ryu Sato <ryu@weseek.co.jp>
 
@@ -12,5 +12,6 @@ COPY htdocs/ $HTTPD_DOCS_PATH/
 
 # Add extra config 
 ARG CONF_PROXY="extra/proxy.conf"
+
 COPY $CONF_PROXY $HTTPD_EXTRA_CONF_DIR/
 RUN echo "Include conf/$CONF_PROXY" >> $HTTPD_CONF_PATH
