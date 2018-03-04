@@ -13,7 +13,7 @@ services:
     # Enable to restart container (It is useful for Docker for Windows)
     #restart: always
   wiki:
-    image: 'ryu310/pukiwiki-plus:php-7.2.2-apache-1.4.7-01'
+    image: 'ryu310/pukiwiki-plus:php-7.2.2-apache-1.4.7-02'
     volumes:
       - 'wiki_data:/var/www/html/wiki'
       - 'apache_config:/etc/apache2'
