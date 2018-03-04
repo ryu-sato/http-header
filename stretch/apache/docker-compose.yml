@@ -1,19 +1,20 @@
 version: '2'
 services:
   http_header:
-    image: 'ryu310/http-header-docker-compose:php-7-apache-04'
+    image: 'ryu310/http-header-docker-compose:php-7.2.2-apache-01'
     build:
       context: ../../
       dockerfile: stretch/apache/Dockerfile
     volumes:
       - 'http_header_config:/etc/apache2/conf'
       - 'http_header_data:/var/www/html'
+      - 'http_header_php_config:/usr/local/etc/php'
     ports:
       - 80:80
     # Enable to restart container (It is useful for Docker for Windows)
 #    restart: always
   wiki:
-    image: 'ryu310/pukiwiki-plus:php-7-apache-1.4.7-06'
+    image: 'ryu310/pukiwiki-plus:php-7.2.2-apache-1.4.7-01'
     volumes:
       - 'wiki_data:/var/www/html/wiki'
     environment:
@@ -24,3 +25,4 @@ volumes:
   http_header_config:
   http_header_data:
   wiki_data:
+  http_header_php_config:

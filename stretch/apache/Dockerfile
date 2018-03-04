@@ -1,4 +1,4 @@
-FROM php:7-apache
+FROM php:7.2.2-apache
 
 MAINTAINER Ryu Sato <ryu@weseek.co.jp>
 
@@ -130,3 +130,5 @@ RUN a2enmod access_compat \
             usertrack \
             vhost_alias \
             xml2enc 
+
+VOLUME /usr/local/etc/php
