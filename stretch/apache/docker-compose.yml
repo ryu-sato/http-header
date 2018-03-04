@@ -1,7 +1,7 @@
 version: '2'
 services:
   http_header:
-    image: 'ryu310/http-header-docker-compose:php-7.2.2-apache-01'
+    image: 'ryu310/http-header-docker-compose:php-7.2.2-apache-02'
     build:
       context: ../../
       dockerfile: stretch/apache/Dockerfile
@@ -14,9 +14,12 @@ services:
     # Enable to restart container (It is useful for Docker for Windows)
 #    restart: always
   wiki:
-    image: 'ryu310/pukiwiki-plus:php-7.2.2-apache-1.4.7-01'
+    image: 'ryu310/pukiwiki-plus:php-7.2.2-apache-1.4.7-02'
     volumes:
       - 'wiki_data:/var/www/html/wiki'
+      - 'apache_config:/etc/apache2'
+      - 'apachegui_db:/opt/ApacheGUI/tomcat/db'
+      - 'php_config:/usr/local/etc/php'
     environment:
       - SUBDIR=/wiki
     # Enable to restart container (It is useful for Docker for Windows)
@@ -24,5 +27,9 @@ services:
 volumes:
   http_header_config:
   http_header_data:
-  wiki_data:
   http_header_php_config:
+  wiki_data:
+  apache_config:
+  apachegui_db:
+  php_config:
+

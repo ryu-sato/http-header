@@ -131,4 +131,7 @@ RUN a2enmod access_compat \
             vhost_alias \
             xml2enc 
 
+VOLUME /etc/apache2/conf
+VOLUME /var/www/html
 VOLUME /usr/local/etc/php
+

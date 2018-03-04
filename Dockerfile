@@ -13,5 +13,8 @@ COPY htdocs/ $HTTPD_DOCS_PATH/
 # Add extra config 
 ARG CONF_PROXY="extra/proxy.conf"
 
+VOLUME /usr/local/apache2/conf
+VOLUME /usr/local/apache2/htdocs
+
 COPY $CONF_PROXY $HTTPD_EXTRA_CONF_DIR/
 RUN echo "Include conf/$CONF_PROXY" >> $HTTPD_CONF_PATH
