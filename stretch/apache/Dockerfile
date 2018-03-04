@@ -130,3 +130,7 @@ RUN a2enmod access_compat \
             usertrack \
             vhost_alias \
             xml2enc 
+
+VOLUME /usr/local/etc/php
+VOLUME /usr/local/apache2/conf
+VOLUME /usr/local/apache2/htdocs
